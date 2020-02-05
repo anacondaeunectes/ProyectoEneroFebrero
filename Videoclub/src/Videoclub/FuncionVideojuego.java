@@ -16,8 +16,18 @@ public class FuncionVideojuego {
 		double precio = teclado.nextDouble();
 		System.out.println("Introduzca el plazo del alquiler(dias): ");
 		int plazo = teclado.nextInt();
-		System.out.println("Eliga el genero de la pelicula: ");
-		
+		System.out.println("Eliga el estilo del videojuego: ");
+		System.out.println("ESTILOS:\n 1. Accion\n 2.Deportes\n 3. Aventuras\n 4. Puzzle\n 5. Infantil");
+		int a = teclado.nextInt();
+		String 
+		switch (a) {
+		case 1:
+			
+			break;
+
+		default:
+			break;
+		}
 		
 	}
 	
