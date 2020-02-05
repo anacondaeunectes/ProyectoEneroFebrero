@@ -5,11 +5,11 @@ public class Videojuego extends Producto {
 	Enum estilo;
 	Enum plataforma;
 	
-	Videojuego(){
+	public Videojuego(){
 		
 	}
 	
-	Videojuego(String titulo, String tipo, double precioAlquiler, int plazoAlquiler, boolean alquilado, Enum estilo, Enum plataforma){
+	public Videojuego(String titulo, String tipo, double precioAlquiler, int plazoAlquiler, boolean alquilado, Enum estilo, Enum plataforma){
 		super(titulo, tipo, precioAlquiler, plazoAlquiler, alquilado);
 		this.estilo=estilo;
 		this.plataforma=plataforma;

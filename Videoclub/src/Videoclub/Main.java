@@ -6,9 +6,12 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		
-		Cliente e = new Cliente();
+//		Cliente e = new Cliente();
+		FuncionVideojuego a = new FuncionVideojuego();
 		
-		e.añadir();
+		a.addVideojuego();
+		System.out.println(FuncionVideojuego.listaCliente.get(0));
+//		e.aï¿½adir();
 	}
 
 }

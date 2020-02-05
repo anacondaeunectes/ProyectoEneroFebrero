@@ -5,6 +5,6 @@ public enum Estilo {
 	ACCION,
 	DEPORTES,
 	AVENTURAS,
-	PUZLE,
+	PUZZLE,
 	INFANTIL;
 }

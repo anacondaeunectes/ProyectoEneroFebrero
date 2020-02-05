@@ -2,7 +2,7 @@ package Videoclub;
 
 public class Pelicula extends Producto{
 
-	Genero gen;
+	Enum genero;
 	String anio;
 	String director;
 	String interpretes;
@@ -11,21 +11,21 @@ public class Pelicula extends Producto{
 		
 	}
 	
-	Pelicula(String titulo, String tipo, double precioAlquiler, String plazoAlquiler, boolean alquilado, Genero gen, String anio, String director, String interpretes){
+	Pelicula(String titulo, String tipo, double precioAlquiler, int plazoAlquiler, boolean alquilado, Enum gen, String anio, String director, String interpretes){
 		super(titulo, tipo, precioAlquiler, plazoAlquiler, alquilado);
 		this.tipo="Pelicula";
-		this.gen=gen;
+		this.genero=genero;
 		this.anio=anio;
 		this.director=director;
 		this.interpretes=interpretes;
 	}
 
-	public Genero getGen() {
-		return gen;
+	public Enum getGen() {
+		return genero;
 	}
 
-	public void setGen(Genero gen) {
-		this.gen = gen;
+	public void setGen(Enum gen) {
+		this.genero = gen;
 	}
 
 	public String getAnio() {
