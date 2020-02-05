@@ -1,28 +1,12 @@
 package Videoclub;
 
-public class Excepcion {
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-	public boolean soloTexto(String a) {
-		boolean aux=true;
-		int cont=0;
-		do {
-			
-			for (int i = 0; i < a.length(); i++){
-				char caracter = a.toUpperCase().charAt(i);
-				int valorASCII = (int)caracter;
-				if (valorASCII != 165 && (valorASCII < 65 || valorASCII > 90)) {
-					aux=false;
-					if (aux==false&&cont==1) {
-						System.out.println("El dato introducido no es correcto. Vuelva a introducirlo");
-						cont=cont+1;
-					}
-				}
-			}
-			
-		} while (aux==true);
-		
-		return true;
-	}
+public class Excepcion {
+	
+	BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
 	
 	public boolean soloNumero(String a) {
 		try {
@@ -31,5 +15,19 @@ public class Excepcion {
 		} catch (NumberFormatException e) {
 			return false;
 		}
+	}
+	
+	
+	public String soloTexto(String a) throws IOException {
+		int cont=0;
+		do {
+			if (a.toLowerCase().matches("^([a-z]+[ ]?){1,2}$")==false) {
+				System.out.println("Introduzca solo letras, por favor.");
+				a=teclado.readLine();
+			}else {
+				cont=1;
+			}
+		} while (cont==0);
+		return a;
 	}
 }

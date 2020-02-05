@@ -90,28 +90,29 @@ public class Cliente {
 	
 	public void añadirCliente() throws IOException {
 		BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
-		try {
-			do {
-				System.out.println("Nombre Cliente:");			
-				nombre = teclado.readLine();
-				ex.soloTexto(nombre);
-			}while (ex.soloTexto(nombre)==true);
-			do {
-				System.out.println("Direccion Cliente:");			
-				direccion = teclado.readLine();
-				ex.soloTexto(direccion);
-			}while (ex.soloTexto(direccion)==true);
-			do {
-				System.out.println("Telefono Cliente:");			
-				telefono = teclado.readLine();
-				ex.soloNumero(telefono);
-			}while (ex.soloNumero(telefono)==true);
-		} catch (NumberFormatException e) {
-			System.out.println("Ha introducido algun dato erroneo");
-		} catch (NullPointerException e) {
-			System.out.println("Ha ocurrido algo");
-		}
-		System.out.println("Creado " + getNombre());
+		
+		System.out.println("Nombre Cliente:");
+		nombre=ex.soloTexto(teclado.readLine());
+		System.out.println("Fin");
 		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
