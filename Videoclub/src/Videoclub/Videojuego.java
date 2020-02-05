@@ -30,6 +30,13 @@ public class Videojuego extends Producto {
 	public void setPlat(Enum plataforma) {
 		this.plataforma = plataforma;
 	}
+
+	@Override
+	public String toString() {
+		return "Videojuego [titulo= " + titulo + ", precioAlquiler=" + precioAlquiler
+				+ ", plazoAlquiler=" + plazoAlquiler + ", alquilado=" + alquilado + ", estilo=" + estilo + ", plataforma=" + plataforma + "]";
+	}
+	
 	
 	
 }

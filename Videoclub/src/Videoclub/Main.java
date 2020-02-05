@@ -10,7 +10,8 @@ public class Main {
 		FuncionVideojuego a = new FuncionVideojuego();
 		
 		a.addVideojuego();
-		System.out.println(FuncionVideojuego.listaCliente.get(0));
+		System.out.println(FuncionVideojuego.listaVideojuego.get(0));
+		a.listarVideojuegos();
 //		e.a�adir();
 	}
 

@@ -59,6 +59,14 @@ public class Producto {
 	public void setAlquilado(boolean alquilado) {
 		this.alquilado = alquilado;
 	}
+
+	@Override
+	public String toString() {
+		return "Producto [titulo=" + titulo + ", tipo=" + tipo + ", precioAlquiler=" + precioAlquiler
+				+ ", plazoAlquiler=" + plazoAlquiler + ", alquilado=" + alquilado + "]";
+	}
+	
+	
 	
 	
 }
