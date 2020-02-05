@@ -4,12 +4,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class FuncionCliente {
 	
 	BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
 
-	ArrayList<Cliente> listaCliente = new ArrayList<>();
+	HashMap listaCliente= new HashMap();
 	
 	FuncionCliente(){
 		
@@ -22,7 +23,7 @@ public class FuncionCliente {
 		String direccion=teclado.readLine();
 		System.out.println("Telefono Cliente:");
 		String telefono=teclado.readLine();
-		listaCliente.add(new Cliente(nombre, direccion, telefono));
+		//listaCliente.put(key, value)
 		System.out.println("");
 	}
 	
@@ -34,8 +35,8 @@ public class FuncionCliente {
 		}else {
 			for (int i = 0; i < listaCliente.size(); i++) {
 				if (num==i) {
-					Cliente c = listaCliente.get(i);
-					c.toString();
+					//Cliente c = listaCliente.get(i);
+					//c.toString();
 				}
 			}
 		}

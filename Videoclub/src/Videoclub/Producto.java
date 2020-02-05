@@ -5,14 +5,14 @@ public class Producto {
 	String titulo;
 	String tipo; //Ver si es necesario
 	double precioAlquiler;
-	String plazoAlquiler;
+	int plazoAlquiler;
 	boolean alquilado=false;
 	
 	Producto(){
 		
 	}
 	
-	Producto(String titulo, String tipo, double precioAlquiler, String plazoAlquiler, boolean alquilado){
+	Producto(String titulo, String tipo, double precioAlquiler, int plazoAlquiler, boolean alquilado){
 		this.titulo=titulo;
 		this.tipo=tipo;
 		this.precioAlquiler=precioAlquiler;
@@ -44,11 +44,11 @@ public class Producto {
 		this.precioAlquiler = precioAlquiler;
 	}
 
-	public String getPlazoAlquiler() {
+	public int getPlazoAlquiler() {
 		return plazoAlquiler;
 	}
 
-	public void setPlazoAlquiler(String plazoAlquiler) {
+	public void setPlazoAlquiler(int plazoAlquiler) {
 		this.plazoAlquiler = plazoAlquiler;
 	}
 

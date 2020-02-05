@@ -9,7 +9,7 @@ public class Videojuego extends Producto {
 		
 	}
 	
-	Videojuego(String titulo, String tipo, double precioAlquiler, String plazoAlquiler, boolean alquilado, Estilo est, Plataforma plat){
+	Videojuego(String titulo, String tipo, double precioAlquiler, int plazoAlquiler, boolean alquilado, Estilo est, Plataforma plat){
 		super(titulo, tipo, precioAlquiler, plazoAlquiler, alquilado);
 		this.est=est;
 		this.plat=plat;

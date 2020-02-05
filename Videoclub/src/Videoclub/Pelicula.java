@@ -11,7 +11,7 @@ public class Pelicula extends Producto{
 		
 	}
 	
-	Pelicula(String titulo, String tipo, double precioAlquiler, String plazoAlquiler, boolean alquilado, Genero gen, String anio, String director, String interpretes){
+	Pelicula(String titulo, String tipo, double precioAlquiler, int plazoAlquiler, boolean alquilado, Genero gen, String anio, String director, String interpretes){
 		super(titulo, tipo, precioAlquiler, plazoAlquiler, alquilado);
 		this.tipo="Pelicula";
 		this.gen=gen;
