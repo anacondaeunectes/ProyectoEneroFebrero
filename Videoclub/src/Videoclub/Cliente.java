@@ -4,21 +4,22 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Cliente {
 
-	public static int nCliente=0;
+	Excepcion ex = new Excepcion();
+	
 	String nombre;
 	String direccion;
 	String telefono;
-	ArrayList<Pelicula> clientePeliculas;
-	ArrayList<Videojuego> clienteVideojuegos;
+	HashMap clientePeliculas;
+	HashMap clienteVideojuegos;
 	
 	
 	Cliente() {
-		nCliente++;
-		clientePeliculas=new ArrayList<>();
-		clienteVideojuegos=new ArrayList<>();
+		clientePeliculas=new HashMap();
+		clienteVideojuegos=new HashMap();
 	}
 	
 	
@@ -26,41 +27,29 @@ public class Cliente {
 		this.nombre=nombre;
 		this.direccion=direccion;
 		this.telefono=telefono;
-		nCliente++;
-		clientePeliculas=new ArrayList<>();
-		clienteVideojuegos=new ArrayList<>();
+		clientePeliculas=new HashMap();
+		clienteVideojuegos=new HashMap();
 	}
 	
 	
-	public ArrayList<Pelicula> getClientePeliculas() {
+	public HashMap getClientePeliculas() {
 		return clientePeliculas;
 	}
 
 
-	public void setClientePeliculas(ArrayList<Pelicula> clientePeliculas) {
+	public void setClientePeliculas(HashMap clientePeliculas) {
 		this.clientePeliculas = clientePeliculas;
 	}
 
 
-	public ArrayList<Videojuego> getClienteVideojuegos() {
+	public HashMap getClienteVideojuegos() {
 		return clienteVideojuegos;
 	}
 
 
-	public void setClienteVideojuegos(ArrayList<Videojuego> clienteVideojuegos) {
+	public void setClienteVideojuegos(HashMap clienteVideojuegos) {
 		this.clienteVideojuegos = clienteVideojuegos;
 	}
-
-
-	public static int getnCliente() {
-		return nCliente;
-	}
-
-	
-	public static void setnCliente(int nCliente) {
-		Cliente.nCliente = nCliente;
-	}
-
 	
 	public String getNombre() {
 		return nombre;
@@ -93,26 +82,36 @@ public class Cliente {
 	
 	@Override
 	public String toString() {
-		return "Cliente Nº:" + getnCliente() + 
-				"\nNombre: " + getNombre() + 
+		return	"\nNombre: " + getNombre() + 
 				"\nDireccion: " + getDireccion() + 
 				"\nTelefono: " + getTelefono();
 		
 	}
 	
-	public void añadir() throws IOException {
+	public void añadirCliente() throws IOException {
 		BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
-		
 		try {
-			System.out.println("String:");
-			String a = teclado.readLine();
-			System.out.println("Int:");
-			int b = Integer.parseInt(teclado.readLine());
-			System.out.println("Double:");
-			double c = Double.parseDouble(teclado.readLine());
+			do {
+				System.out.println("Nombre Cliente:");			
+				nombre = teclado.readLine();
+				ex.soloTexto(nombre);
+			}while (ex.soloTexto(nombre)==true);
+			do {
+				System.out.println("Direccion Cliente:");			
+				direccion = teclado.readLine();
+				ex.soloTexto(direccion);
+			}while (ex.soloTexto(direccion)==true);
+			do {
+				System.out.println("Telefono Cliente:");			
+				telefono = teclado.readLine();
+				ex.soloNumero(telefono);
+			}while (ex.soloNumero(telefono)==true);
 		} catch (NumberFormatException e) {
 			System.out.println("Ha introducido algun dato erroneo");
-		} 
+		} catch (NullPointerException e) {
+			System.out.println("Ha ocurrido algo");
+		}
+		System.out.println("Creado " + getNombre());
 		
 	}
 }
