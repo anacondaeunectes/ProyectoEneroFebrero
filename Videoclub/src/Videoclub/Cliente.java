@@ -90,4 +90,8 @@ public class Cliente {
 		} 
 		
 	}
+	
+	public void cc() {
+		RegistroAlquiler p = new RegistroAlquiler(this, producto, importe);
+	}
 }

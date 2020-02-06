@@ -10,9 +10,12 @@ public class Main {
 		FuncionVideojuego a = new FuncionVideojuego();
 		
 		a.addVideojuego();
-		System.out.println(FuncionVideojuego.listaVideojuego.get(0));
-		a.listarVideojuegos();
+		
+//		System.out.println(FuncionVideojuego.listaVideojuego.get(0));
+//		a.listarVideojuegos();
+		a.getClass().toString();
 //		e.a�adir();
+		
 	}
 
 }

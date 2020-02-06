@@ -14,11 +14,11 @@ public class RegistroAlquiler {
 		
 	}
 	
-	public RegistroAlquiler(Cliente cliente, Producto producto, LocalDate fechaAlquiler, LocalDate fechaDevolucion, double importe) {
+	public RegistroAlquiler(Cliente cliente, Producto producto,  double importe) {
 		this.cliente=cliente;
 		this.producto=producto;
-		this.fechaAlquiler=fechaAlquiler;
-		this.fechaDevolucion=fechaDevolucion;
+		this.fechaAlquiler=LocalDate.now();
+		this.fechaDevolucion=fechaAlquiler.plusDays(producto.getPlazoAlquiler());
 		this.importe=importe;
 	}
 

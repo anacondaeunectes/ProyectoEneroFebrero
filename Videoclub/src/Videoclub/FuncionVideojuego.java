@@ -111,7 +111,7 @@ public class FuncionVideojuego {
 		listarVideojuegos();
 		System.out.println("Introduzca un videojuego: ");
 		int opcion = teclado.nextInt();
-		System.out.println(listaVideojuego.get(opcion).toString());
+		System.out.println(listaVideojuego.get(opcion - 1).toString());
 	}
 	
 	public void eliminarVideojuego() {
