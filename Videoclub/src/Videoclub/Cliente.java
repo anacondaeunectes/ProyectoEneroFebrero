@@ -8,18 +8,21 @@ import java.util.HashMap;
 
 public class Cliente {
 
-	Excepcion ex = new Excepcion();
+	static BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
 	
+	Excepcion ex = new Excepcion();
+	static int codPelicula=0;
+	static int codVideojuego=0;
 	String nombre;
 	String direccion;
 	String telefono;
-	HashMap clientePeliculas;
-	HashMap clienteVideojuegos;
+	HashMap<Integer, Object> clientePeliculas;
+	HashMap<Integer, Object> clienteVideojuegos;
 	
 	
 	Cliente() {
-		clientePeliculas=new HashMap();
-		clienteVideojuegos=new HashMap();
+		clientePeliculas=new HashMap<>();
+		clienteVideojuegos=new HashMap<>();
 	}
 	
 	
@@ -27,8 +30,8 @@ public class Cliente {
 		this.nombre=nombre;
 		this.direccion=direccion;
 		this.telefono=telefono;
-		clientePeliculas=new HashMap();
-		clienteVideojuegos=new HashMap();
+		clientePeliculas=new HashMap<>();
+		clienteVideojuegos=new HashMap<>();
 	}
 	
 	
@@ -88,13 +91,34 @@ public class Cliente {
 		
 	}
 	
-	public void añadirCliente() throws IOException {
-		BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
+	public void addPelicula() throws IOException {	//Para Pelicula
 		
 		System.out.println("Nombre Cliente:");
 		nombre=ex.soloTexto(teclado.readLine());
-		System.out.println("Fin");
+		System.out.println("Direccion Cliente:");
+		direccion=ex.soloTexto(teclado.readLine());
+		System.out.println("Telefono Cliente");
+		telefono=ex.soloTelefono(teclado.readLine());
+		Cliente c = new Cliente(nombre, direccion, telefono);
 		
+		Pelicula p = new Pelicula();			//terminar
+		codPelicula++;
+		clientePeliculas.put(codPelicula, p);
+	}
+	
+	public void addVideojuego() throws IOException {	//Para Videojuegos
+		
+		System.out.println("Nombre Cliente:");
+		nombre=ex.soloTexto(teclado.readLine());
+		System.out.println("Direccion Cliente:");
+		direccion=ex.soloTexto(teclado.readLine());
+		System.out.println("Telefono Cliente");
+		telefono=ex.soloTelefono(teclado.readLine());
+		Cliente c = new Cliente(nombre, direccion, telefono);
+		
+		Videojuego v = new Videojuego();			//terminar
+		codVideojuego++;
+		clienteVideojuegos.put(codVideojuego, v);
 	}
 	
 	

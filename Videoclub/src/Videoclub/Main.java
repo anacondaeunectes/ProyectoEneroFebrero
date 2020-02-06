@@ -11,8 +11,10 @@ public class Main {
 		Cliente e = new Cliente();
 		Excepcion ex = new Excepcion();
 		
-		//ex.soloNumero(a);
-		e.añadirCliente();
+		System.out.println("Introduce numero");
+		String a = teclado.readLine();
+		ex.soloNumeros(a);
+		//e.añadirCliente();
 	}
 
 }
