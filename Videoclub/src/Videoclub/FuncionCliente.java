@@ -16,7 +16,7 @@ public class FuncionCliente {
 	}
 	
 	public void addCliente() throws IOException {
-		System.out.println("-AÑADIR CLIENTE- \nNombre Cliente:");
+		System.out.println("-Aï¿½ADIR CLIENTE- \nNombre Cliente:");
 		String nombre = teclado.readLine(); 
 		System.out.println("Direccion  Cliente:");
 		String direccion=teclado.readLine();
@@ -27,10 +27,10 @@ public class FuncionCliente {
 	}
 	
 	public void buscarCliente() throws NumberFormatException, IOException {
-		System.out.println("Código del cliente a buscar");
+		System.out.println("Cï¿½digo del cliente a buscar");
 		int num = Integer.parseInt(teclado.readLine());
 		if (num>listaCliente.size() || num<0) {
-			System.out.println("El código introducido no pertenece a ningun cliente.");
+			System.out.println("El cï¿½digo introducido no pertenece a ningun cliente.");
 		}else {
 			for (int i = 0; i < listaCliente.size(); i++) {
 				if (num==i) {
@@ -44,4 +44,5 @@ public class FuncionCliente {
 	public void eliminarCliente() {
 		
 	}
+	
 }

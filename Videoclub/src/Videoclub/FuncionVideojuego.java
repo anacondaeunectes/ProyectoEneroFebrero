@@ -84,6 +84,8 @@ public class FuncionVideojuego {
 		
 		Iterator<Videojuego> ite = listaVideojuego.iterator();
 		
+		System.out.println("Este es el listado de los videojuegos: ");
+		
 		while (ite.hasNext()) {
 			
 			System.out.println(ite.next().toString());
@@ -98,13 +100,6 @@ public class FuncionVideojuego {
 //		
 //	}
 	
-//	public void alquilar() {
-//		
-//		listarVideojuegos();
-//		int numero = teclado.nextInt();
-//		busquedaVideojuego(numero);
-//		
-//	}
 	
 	public void fichaVideojuego() {
 		
@@ -116,6 +111,7 @@ public class FuncionVideojuego {
 	
 	public void eliminarVideojuego() {
 		
+		System.out.println("Introduzca el videojuego a eliminar: ");
 		listarVideojuegos();
 		int opcion = teclado.nextInt();
 		listaVideojuego.remove(opcion);
