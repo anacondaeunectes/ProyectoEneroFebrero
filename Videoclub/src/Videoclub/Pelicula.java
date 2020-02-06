@@ -11,9 +11,8 @@ public class Pelicula extends Producto{
 		
 	}
 	
-	Pelicula(String titulo, String tipo, double precioAlquiler, int plazoAlquiler, boolean alquilado, Genero gen, String anio, String director, String interpretes){
-		super(titulo, tipo, precioAlquiler, plazoAlquiler, alquilado);
-		this.tipo="Pelicula";
+	Pelicula(String titulo, double precioAlquiler, int plazoAlquiler, boolean alquilado, Genero gen, String anio, String director, String interpretes){
+		super(titulo, precioAlquiler, plazoAlquiler, alquilado);
 		this.gen=gen;
 		this.anio=anio;
 		this.director=director;
@@ -50,6 +49,9 @@ public class Pelicula extends Producto{
 
 	public void setInterpretes(String interpretes) {
 		this.interpretes = interpretes;
+	}
+	public String toString() {
+		return "Titulo: "+titulo+"\nGenero: "+gen+"\nAnio: "+anio+"\nDirector: "+director+"\nInterpretes: "+interpretes+"\nPrecio: "+precioAlquiler;
 	}
 	
 }
