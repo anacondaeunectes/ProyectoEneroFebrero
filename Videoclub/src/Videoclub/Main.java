@@ -13,7 +13,7 @@ public class Main {
 		
 		System.out.println("Introduce numero");
 		String a = teclado.readLine();
-		ex.soloNumeros(a);
+		ex.soloTexto(a);
 		//e.añadirCliente();
 	}
 

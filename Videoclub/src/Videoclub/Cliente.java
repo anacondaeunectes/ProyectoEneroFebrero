@@ -5,24 +5,24 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class Cliente {
 
-	static BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
+	BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
+	Scanner e = new Scanner(System.in);
 	
 	Excepcion ex = new Excepcion();
-	static int codPelicula=0;
-	static int codVideojuego=0;
 	String nombre;
 	String direccion;
 	String telefono;
-	HashMap<Integer, Object> clientePeliculas;
-	HashMap<Integer, Object> clienteVideojuegos;
+	ArrayList<Videojuego> clienteVideojuegos;
+	ArrayList<Pelicula> clientePeliculas;
 	
 	
 	Cliente() {
-		clientePeliculas=new HashMap<>();
-		clienteVideojuegos=new HashMap<>();
+		clientePeliculas=new ArrayList();
+		clienteVideojuegos=new ArrayList();
 	}
 	
 	
@@ -30,27 +30,27 @@ public class Cliente {
 		this.nombre=nombre;
 		this.direccion=direccion;
 		this.telefono=telefono;
-		clientePeliculas=new HashMap<>();
-		clienteVideojuegos=new HashMap<>();
+		clientePeliculas=new ArrayList();
+		clienteVideojuegos=new ArrayList();
 	}
 	
 	
-	public HashMap getClientePeliculas() {
+	public ArrayList getClientePeliculas() {
 		return clientePeliculas;
 	}
 
 
-	public void setClientePeliculas(HashMap clientePeliculas) {
+	public void setClientePeliculas(ArrayList clientePeliculas) {
 		this.clientePeliculas = clientePeliculas;
 	}
 
 
-	public HashMap getClienteVideojuegos() {
+	public ArrayList getClienteVideojuegos() {
 		return clienteVideojuegos;
 	}
 
 
-	public void setClienteVideojuegos(HashMap clienteVideojuegos) {
+	public void setClienteVideojuegos(ArrayList clienteVideojuegos) {
 		this.clienteVideojuegos = clienteVideojuegos;
 	}
 	
@@ -83,43 +83,24 @@ public class Cliente {
 		this.telefono = telefono;
 	}
 	
-	@Override
-	public String toString() {
+	//@Override
+	/*public String toString() {
 		return	"\nNombre: " + getNombre() + 
 				"\nDireccion: " + getDireccion() + 
-				"\nTelefono: " + getTelefono();
+				"\nTelefono: " + getTelefono() + 
+				"\nVideojuegos Alquilados: \n" + clienteVideojuegos.listarVideojuegos() + 
+				"\nPeliculas Alquiladas: " + clientePeliculas.listarPeliculas();
+	}*/
+	
+	/*public void addPelicula(Pelicula a) throws IOException {
 		
+		clientePeliculas.add(a);
 	}
 	
-	public void addPelicula() throws IOException {	//Para Pelicula
+	public void addVideojuego(Videojuego a) throws IOException {	
 		
-		System.out.println("Nombre Cliente:");
-		nombre=ex.soloTexto(teclado.readLine());
-		System.out.println("Direccion Cliente:");
-		direccion=ex.soloTexto(teclado.readLine());
-		System.out.println("Telefono Cliente");
-		telefono=ex.soloTelefono(teclado.readLine());
-		Cliente c = new Cliente(nombre, direccion, telefono);
-		
-		Pelicula p = new Pelicula();			//terminar
-		codPelicula++;
-		clientePeliculas.put(codPelicula, p);
-	}
-	
-	public void addVideojuego() throws IOException {	//Para Videojuegos
-		
-		System.out.println("Nombre Cliente:");
-		nombre=ex.soloTexto(teclado.readLine());
-		System.out.println("Direccion Cliente:");
-		direccion=ex.soloTexto(teclado.readLine());
-		System.out.println("Telefono Cliente");
-		telefono=ex.soloTelefono(teclado.readLine());
-		Cliente c = new Cliente(nombre, direccion, telefono);
-		
-		Videojuego v = new Videojuego();			//terminar
-		codVideojuego++;
-		clienteVideojuegos.put(codVideojuego, v);
-	}
+		clienteVideojuegos.add(a);
+	}*/
 	
 	
 	

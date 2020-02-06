@@ -33,7 +33,7 @@ public class FuncionCliente {
 		System.out.println("");
 	}
 	
-	public void buscarCliente() throws NumberFormatException, IOException {	//Probar
+	public void buscarCliente() throws NumberFormatException, IOException {	//Para ver la ficha de un cliente
 		System.out.println("Código del cliente a buscar");
 		int num = Integer.parseInt(ex.soloNumeros(teclado.readLine()));
 		if (num>listaCliente.size() || num<0) {
