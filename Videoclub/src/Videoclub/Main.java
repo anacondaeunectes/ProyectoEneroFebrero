@@ -11,9 +11,9 @@ public class Main {
 		Cliente e = new Cliente();
 		Excepcion ex = new Excepcion();
 		
-		System.out.println("Introduce numero");
-		String a = teclado.readLine();
-		ex.soloTexto(a);
+		//System.out.println("Introduce numero");
+		//String a = teclado.readLine();
+		//ex.soloTexto(a);
 		//e.añadirCliente();
 	}
 

@@ -83,16 +83,16 @@ public class Cliente {
 		this.telefono = telefono;
 	}
 	
-	//@Override
-	/*public String toString() {
+	@Override
+	public String toString() {
 		return	"\nNombre: " + getNombre() + 
 				"\nDireccion: " + getDireccion() + 
 				"\nTelefono: " + getTelefono() + 
 				"\nVideojuegos Alquilados: \n" + clienteVideojuegos.listarVideojuegos() + 
 				"\nPeliculas Alquiladas: " + clientePeliculas.listarPeliculas();
-	}*/
+	}
 	
-	/*public void addPelicula(Pelicula a) throws IOException {
+	public void addPelicula(Pelicula a) throws IOException {
 		
 		clientePeliculas.add(a);
 	}
@@ -100,7 +100,7 @@ public class Cliente {
 	public void addVideojuego(Videojuego a) throws IOException {	
 		
 		clienteVideojuegos.add(a);
-	}*/
+	}
 	
 	
 	

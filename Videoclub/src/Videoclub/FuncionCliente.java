@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class FuncionCliente {
 	
@@ -19,7 +20,7 @@ public class FuncionCliente {
 		
 	}
 	
-	public void addCliente() throws IOException {	//Probar
+	public void addCliente() throws IOException {	//Añade cliente a la lista
 		
 		System.out.println("-AÑADIR CLIENTE- \nNombre Cliente:");
 		String nombre = ex.soloTexto(teclado.readLine());
@@ -28,12 +29,12 @@ public class FuncionCliente {
 		System.out.println("Telefono Cliente:");
 		String telefono = ex.soloTelefono(teclado.readLine());
 		c = new Cliente(nombre, direccion, telefono);
-		cod++;
 		listaCliente.put(cod, c);
 		System.out.println("");
+		cod++;
 	}
 	
-	public void buscarCliente() throws NumberFormatException, IOException {	//Para ver la ficha de un cliente
+	public void fichaCliente() throws NumberFormatException, IOException {	//Para ver la ficha de un cliente
 		System.out.println("Código del cliente a buscar");
 		int num = Integer.parseInt(ex.soloNumeros(teclado.readLine()));
 		if (num>listaCliente.size() || num<0) {
@@ -47,7 +48,7 @@ public class FuncionCliente {
 		}
 	}
 	
-	public void eliminarCliente() throws NumberFormatException, IOException  {
+	public void eliminarCliente() throws NumberFormatException, IOException  {	//Elimina cliente de la lista
 		System.out.println("Código del cliente a eliminar");
 		int num = Integer.parseInt(ex.soloNumeros(teclado.readLine()));
 		if (num>listaCliente.size() || num<0) {
@@ -58,6 +59,15 @@ public class FuncionCliente {
 					listaCliente.remove(i);
 				}
 			}
+		}
+	}
+	
+	public void listarCliente() throws NumberFormatException, IOException {	//Para listar los cliente de la lista
+		
+		Iterator<Integer> ite = listaCliente.keySet().iterator();
+		
+		while (ite.hasNext()) {
+			listaCliente.get(ite.next()).toString();
 		}
 	}
 }
