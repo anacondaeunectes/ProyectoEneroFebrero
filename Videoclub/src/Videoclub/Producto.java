@@ -3,7 +3,6 @@ package Videoclub;
 public class Producto {
 
 	String titulo;
-	String tipo; //Ver si es necesario
 	double precioAlquiler;
 	int plazoAlquiler;
 	boolean alquilado=false;
@@ -12,9 +11,8 @@ public class Producto {
 		
 	}
 	
-	Producto(String titulo, String tipo, double precioAlquiler, int plazoAlquiler, boolean alquilado){
+	Producto(String titulo, double precioAlquiler, int plazoAlquiler, boolean alquilado){
 		this.titulo=titulo;
-		this.tipo=tipo;
 		this.precioAlquiler=precioAlquiler;
 		this.plazoAlquiler=plazoAlquiler;
 		this.alquilado=alquilado;
@@ -26,14 +24,6 @@ public class Producto {
 
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
-	}
-
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
 	}
 
 	public double getPrecioAlquiler() {
