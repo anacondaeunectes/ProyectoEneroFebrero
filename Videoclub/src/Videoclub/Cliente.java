@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Cliente {
@@ -87,9 +88,14 @@ public class Cliente {
 	public String toString() {
 		return	"\nNombre: " + getNombre() + 
 				"\nDireccion: " + getDireccion() + 
-				"\nTelefono: " + getTelefono() + 
-				"\nVideojuegos Alquilados: \n" + clienteVideojuegos.listarVideojuegos() + 
-				"\nPeliculas Alquiladas: " + clientePeliculas.listarPeliculas();
+				"\nTelefono: " + getTelefono() + ".\n";
+	}
+	
+	public void fichaCliente() {
+		System.out.println(toString() + "\nPeliculas Alquiladas:");
+		listarPeliculas();
+		System.out.println("Videojuegos Alquielados:");
+		listarVideojuegos();
 	}
 	
 	public void addPelicula(Pelicula a) throws IOException {
@@ -100,6 +106,26 @@ public class Cliente {
 	public void addVideojuego(Videojuego a) throws IOException {	
 		
 		clienteVideojuegos.add(a);
+	}
+	
+	public void listarPeliculas(){
+		Iterator<Pelicula> ite = clientePeliculas.iterator();
+		while (ite.hasNext()) {
+			System.out.println(ite.next().toString());
+		}
+		if (clientePeliculas.isEmpty()) {
+			System.out.println("No se han encontrado peliculas");
+		}
+	}
+	
+	public void listarVideojuegos(){
+		Iterator<Videojuego> ite = clienteVideojuegos.iterator();
+		while (ite.hasNext()) {
+			System.out.println(ite.next().toString());
+		}
+		if (clienteVideojuegos.isEmpty()) {
+			System.out.println("No se han encontrado videojuegos");
+		}
 	}
 	
 	

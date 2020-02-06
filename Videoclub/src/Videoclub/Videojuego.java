@@ -2,34 +2,41 @@ package Videoclub;
 
 public class Videojuego extends Producto {
 
-	Estilo est;
-	Plataforma plat;
+	Enum estilo;
+	Enum plataforma;
 	
-	Videojuego(){
+	public Videojuego(){
 		
 	}
 	
-	Videojuego(String titulo, String tipo, double precioAlquiler, int plazoAlquiler, boolean alquilado, Estilo est, Plataforma plat){
-		super(titulo, tipo, precioAlquiler, plazoAlquiler, alquilado);
-		this.est=est;
-		this.plat=plat;
+	public Videojuego(String titulo, double precioAlquiler, int plazoAlquiler, boolean alquilado, Enum estilo, Enum plataforma){
+		super(titulo, precioAlquiler, plazoAlquiler, alquilado);
+		this.estilo=estilo;
+		this.plataforma=plataforma;
 	}
 
-	public Estilo getEst() {
-		return est;
+	public Enum getEstilo() {
+		return estilo;
 	}
 
-	public void setEst(Estilo est) {
-		this.est = est;
+	public void setEst(Enum estilo) {
+		this.estilo = estilo;
 	}
 
-	public Plataforma getPlat() {
-		return plat;
+	public Enum getPlataforma() {
+		return plataforma;
 	}
 
-	public void setPlat(Plataforma plat) {
-		this.plat = plat;
+	public void setPlat(Enum plataforma) {
+		this.plataforma = plataforma;
 	}
+
+	@Override
+	public String toString() {
+		return "Videojuego [titulo= " + titulo + ", precioAlquiler=" + precioAlquiler
+				+ ", plazoAlquiler=" + plazoAlquiler + ", alquilado=" + alquilado + ", estilo=" + estilo + ", plataforma=" + plataforma + "]";
+	}
+	
 	
 	
 }

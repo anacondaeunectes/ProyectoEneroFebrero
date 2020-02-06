@@ -39,7 +39,7 @@ public class Excepcion {
 			
 			int cont=0;
 			do {
-				if (a.matches("^([1-9]+){1,2}$")==false) {
+				if (a.matches("^([0-9]+){1,2}$")==false) {
 					System.out.println("Introduzca solo numeros, por favor.");
 					a=teclado.readLine();
 				}else {
@@ -49,11 +49,11 @@ public class Excepcion {
 			return a;
 		}
 
-	public Double validarDouble() throws IOException {
+	public double validarDouble(String cadena) throws IOException {
         boolean esDouble = false;
         double num = -1;
         do {
-            String cadena = teclado.readLine();
+            cadena = teclado.readLine();
             try {
                 num = Double.parseDouble(cadena);
                 esDouble = true;

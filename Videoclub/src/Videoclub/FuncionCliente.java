@@ -6,18 +6,19 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public class FuncionCliente {
 	
 	BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
 
 	static int cod=0;
-	Cliente c;
+	Cliente c ;
 	Excepcion ex = new Excepcion();
-	HashMap<Integer, Object> listaCliente= new HashMap<>();
-	
+	static HashMap<Integer, Object> listaCliente;
+
 	FuncionCliente(){
-		
+		listaCliente = new HashMap<>();
 	}
 	
 	public void addCliente() throws IOException {	//Añade cliente a la lista
@@ -29,45 +30,63 @@ public class FuncionCliente {
 		System.out.println("Telefono Cliente:");
 		String telefono = ex.soloTelefono(teclado.readLine());
 		c = new Cliente(nombre, direccion, telefono);
+		cod++;
 		listaCliente.put(cod, c);
 		System.out.println("");
-		cod++;
 	}
 	
-	public void fichaCliente() throws NumberFormatException, IOException {	//Para ver la ficha de un cliente
-		System.out.println("Código del cliente a buscar");
-		int num = Integer.parseInt(ex.soloNumeros(teclado.readLine()));
-		if (num>listaCliente.size() || num<0) {
-			System.out.println("El código introducido no pertenece a ningun cliente.");
-		}else {
-			for (int i = 0; i < listaCliente.size(); i++) {
-				if (num==i) {
-					listaCliente.get(i).toString();
+	public void fichaUnCliente() throws NumberFormatException, IOException {	//Para ver la ficha de un cliente
+		System.out.println("Codigo del cliente a buscar");
+		int num;
+		try {
+			num = Integer.parseInt(ex.soloNumeros(teclado.readLine()));
+			if (num>listaCliente.size() || num<0) {
+				System.out.println("El codigo introducido no pertenece a ningun cliente.");
+				fichaUnCliente();
+			}else {
+				for (int i = 0; i < listaCliente.size(); i++) {
+					if (num==i) {
+						listaCliente.get(i).toString();
+					}
 				}
 			}
+		} catch (NullPointerException e) {
+			System.out.println("Ese codigo esta fuera del registro");
+			fichaUnCliente();
 		}
 	}
 	
 	public void eliminarCliente() throws NumberFormatException, IOException  {	//Elimina cliente de la lista
-		System.out.println("Código del cliente a eliminar");
-		int num = Integer.parseInt(ex.soloNumeros(teclado.readLine()));
-		if (num>listaCliente.size() || num<0) {
-			System.out.println("El código introducido no pertenece a ningun cliente.");
-		}else {
-			for (int i = 0; i < listaCliente.size(); i++) {
-				if (num==i) {
-					listaCliente.remove(i);
+		System.out.println(listaCliente.size());
+		System.out.println("Codigo del cliente a eliminar");
+		int num;
+		try {		//corregir
+			num = Integer.parseInt(ex.soloNumeros(teclado.readLine()));
+			if (num>listaCliente.size() || num<0) {
+				System.out.println("El codigo introducido no pertenece a ningun cliente.");
+				eliminarCliente();
+			}else {
+				for (int i = 0; i < listaCliente.size(); i++) {
+					if (num==i) {
+						listaCliente.remove(i);
+						System.out.println("Cliente eliminado");
+					}
 				}
 			}
+		} catch (NullPointerException e) {
+			System.out.println("Ese codigo esta fuera del registro");
+			eliminarCliente();
 		}
 	}
 	
-	public void listarCliente() throws NumberFormatException, IOException {	//Para listar los cliente de la lista
+	public void listarCliente() {
 		
-		Iterator<Integer> ite = listaCliente.keySet().iterator();
-		
-		while (ite.hasNext()) {
-			listaCliente.get(ite.next()).toString();
-		}
+		System.out.println(listaCliente.toString().replaceAll("  ", "\n"));
 	}
+	
+	
+
+	
+	
+	
 }

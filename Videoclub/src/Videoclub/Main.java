@@ -8,13 +8,15 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader teclado = new BufferedReader (new InputStreamReader(System.in));
-		Cliente e = new Cliente();
-		Excepcion ex = new Excepcion();
+		FuncionCliente c = new FuncionCliente();
+		FuncionPelicula p = new FuncionPelicula();
 		
-		//System.out.println("Introduce numero");
-		//String a = teclado.readLine();
-		//ex.soloTexto(a);
-		//e.añadirCliente();
+		c.addCliente();
+		c.addCliente();
+		c.listarCliente();
+		c.fichaUnCliente();
+		c.eliminarCliente();
+		c.listarCliente();
 	}
 
 }
