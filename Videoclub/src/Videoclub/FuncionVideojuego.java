@@ -92,11 +92,11 @@ public class FuncionVideojuego {
 		
 	}
 	
-	public Videojuego busquedaVideojuego(int a) {
-		
-		return listaVideojuego.get(a);
-		
-	}
+//	public Videojuego busquedaVideojuego(int a) {
+//		
+//		return listaVideojuego.get(a);
+//		
+//	}
 	
 //	public void alquilar() {
 //		
@@ -109,8 +109,9 @@ public class FuncionVideojuego {
 	public void fichaVideojuego() {
 		
 		listarVideojuegos();
+		System.out.println("Introduzca un videojuego: ");
 		int opcion = teclado.nextInt();
-		System.out.println(busquedaVideojuego(opcion).toString());
+		System.out.println(listaVideojuego.get(opcion).toString());
 	}
 	
 	public void eliminarVideojuego() {
