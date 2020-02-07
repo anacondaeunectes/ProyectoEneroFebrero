@@ -3,7 +3,6 @@ package Videoclub;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -15,7 +14,7 @@ public class FuncionCliente {
 	static int cod=0;
 	Cliente c ;
 	Excepcion ex = new Excepcion();
-	static HashMap<Integer, Object> listaCliente;
+	HashMap<Integer, Cliente> listaCliente;
 
 	FuncionCliente(){
 		listaCliente = new HashMap<>();
@@ -36,17 +35,20 @@ public class FuncionCliente {
 	}
 	
 	public void fichaUnCliente() throws NumberFormatException, IOException {	//Para ver la ficha de un cliente
+		System.out.println(listaCliente.size());
 		System.out.println("Codigo del cliente a buscar");
 		int num;
 		try {
 			num = Integer.parseInt(ex.soloNumeros(teclado.readLine()));
-			if (num>listaCliente.size() || num<0) {
+			if (num>listaCliente.size() || num<=0) {
+				System.out.println("Numero="+num);
 				System.out.println("El codigo introducido no pertenece a ningun cliente.");
 				fichaUnCliente();
 			}else {
+				System.out.println("Dentro del else");
 				for (int i = 0; i < listaCliente.size(); i++) {
 					if (num==i) {
-						listaCliente.get(i).toString();
+						listaCliente.get(num).toString();
 					}
 				}
 			}
@@ -56,32 +58,63 @@ public class FuncionCliente {
 		}
 	}
 	
-	public void eliminarCliente() throws NumberFormatException, IOException  {	//Elimina cliente de la lista
-		System.out.println(listaCliente.size());
-		System.out.println("Codigo del cliente a eliminar");
-		int num;
-		try {		//corregir
-			num = Integer.parseInt(ex.soloNumeros(teclado.readLine()));
-			if (num>listaCliente.size() || num<0) {
-				System.out.println("El codigo introducido no pertenece a ningun cliente.");
-				eliminarCliente();
-			}else {
-				for (int i = 0; i < listaCliente.size(); i++) {
-					if (num==i) {
-						listaCliente.remove(i);
-						System.out.println("Cliente eliminado");
-					}
-				}
+	
+	public void ficharSoloCliente() throws NumberFormatException, IOException {
+		Iterator g = listaCliente.entrySet().iterator();
+		System.out.println("Selecciona el codigo de cliente deseado");
+		int num=Integer.parseInt(ex.soloNumeros(teclado.readLine()));
+		if (num<=listaCliente.size()&&num>0) {
+			while (g.hasNext()) {
+				Map.Entry e = (Map.Entry)g.next();
+				if ((int) e.getKey()==num) {
+					listaCliente.get(num).fichaCliente();
+				}		
 			}
-		} catch (NullPointerException e) {
-			System.out.println("Ese codigo esta fuera del registro");
-			eliminarCliente();
+		}else {
+			System.out.println("Introduzca un codigo valido");
+			ficharSoloCliente();
 		}
 	}
 	
-	public void listarCliente() {
+	public void eliminarCliente() throws NumberFormatException, IOException  {	//Elimina cliente de la lista
+//		Iterator<Integer> g = listaCliente.keySet().iterator();
+		System.out.println("Selecciona el codigo que quieras eliminar.");
+		int num=Integer.parseInt(ex.soloNumeros(teclado.readLine()));
+		if (num<=0) {
+			System.out.println("Este usuario no existe");
+			eliminarCliente();
+		}else if (num>listaCliente.size()) {
+			System.out.println("Codigo no encontrado");
+			eliminarCliente();
+		}else {
+//			Map.Entry e;
+//			while (g.hasNext()) {
+////				try {
+////					e = (Map.Entry)g.next();
+//					if (listaCliente.get((Integer)num)==g.next()) {
+////						listaCliente.remove(g.getKey());
+//						g.remove();
+//					}	
+////				} catch (ConcurrentModificationException e) {
+////					System.out.println("Ha ocurrido un problema, lo sentimos.");
+////				}
+//					
+//			}
+			
+			if(listaCliente.containsKey(num)){
+	            listaCliente.remove(num);
+	        }
+		}
 		
-		System.out.println(listaCliente.toString().replaceAll("  ", "\n"));
+	}
+	
+	public void listarCliente() {
+		Iterator g = listaCliente.entrySet().iterator();
+		while (g.hasNext()) {
+			Map.Entry e = (Map.Entry)g.next();
+			System.out.println("Cod:" + (int) e.getKey() + e.getValue().toString());	
+		}
+		//System.out.println(listaCliente.toString().replaceAll("  ", "\n"));
 	}
 	
 	

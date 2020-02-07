@@ -88,14 +88,15 @@ public class Cliente {
 	public String toString() {
 		return	"\nNombre: " + getNombre() + 
 				"\nDireccion: " + getDireccion() + 
-				"\nTelefono: " + getTelefono() + ".\n";
+				"\nTelefono: " + getTelefono() + ".";
 	}
 	
-	public void fichaCliente() {
+	public void fichaCliente() {		
 		System.out.println(toString() + "\nPeliculas Alquiladas:");
 		listarPeliculas();
-		System.out.println("Videojuegos Alquielados:");
+		System.out.println("Videojuegos Alquilados:");
 		listarVideojuegos();
+		System.out.println();
 	}
 	
 	public void addPelicula(Pelicula a) throws IOException {
@@ -126,24 +127,5 @@ public class Cliente {
 		if (clienteVideojuegos.isEmpty()) {
 			System.out.println("No se han encontrado videojuegos");
 		}
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}	
 }

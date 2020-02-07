@@ -10,13 +10,17 @@ public class Main {
 		BufferedReader teclado = new BufferedReader (new InputStreamReader(System.in));
 		FuncionCliente c = new FuncionCliente();
 		FuncionPelicula p = new FuncionPelicula();
+		Excepcion ex=new Excepcion();
 		
+		p.addPelicula();
 		c.addCliente();
-		c.addCliente();
+		c.listaCliente.get(1).addPelicula(p.listaPelicula.get(0));
 		c.listarCliente();
-		c.fichaUnCliente();
-		c.eliminarCliente();
-		c.listarCliente();
+		c.ficharSoloCliente();
+		//c.eliminarCliente();
+		//c.listarCliente();
+		//c.eliminarCliente();
+		
 	}
 
 }
