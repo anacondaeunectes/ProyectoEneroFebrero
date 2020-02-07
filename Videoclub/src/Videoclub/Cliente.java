@@ -68,14 +68,14 @@ public class Cliente {
 	
 	@Override
 	public String toString() {
-		return "Cliente Nº:" + getnCliente() + 
+		return "Cliente Nï¿½:" + getnCliente() + 
 				"\nNombre: " + getNombre() + 
 				"\nDireccion: " + getDireccion() + 
 				"\nTelefono: " + getTelefono();
 		
 	}
 	
-	public void añadir() throws IOException {
+	public void aï¿½adir() throws IOException {
 		BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
 		
 		try {
@@ -92,6 +92,6 @@ public class Cliente {
 	}
 	
 	public void cc() {
-		RegistroAlquiler p = new RegistroAlquiler(this, producto, importe);
+		System.out.println("asdasd");
 	}
 }

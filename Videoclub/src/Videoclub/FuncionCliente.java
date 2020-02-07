@@ -4,12 +4,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 
 public class FuncionCliente {
 	
 	BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
 
-	ArrayList<Cliente> listaCliente = new ArrayList<>();
+	static HashMap<Integer, Cliente> listaCliente = new HashMap<>();
 	
 	FuncionCliente(){
 		
@@ -27,10 +29,10 @@ public class FuncionCliente {
 	}
 	
 	public void buscarCliente() throws NumberFormatException, IOException {
-		System.out.println("C�digo del cliente a buscar");
+		System.out.println("Codigo del cliente a buscar");
 		int num = Integer.parseInt(teclado.readLine());
 		if (num>listaCliente.size() || num<0) {
-			System.out.println("El c�digo introducido no pertenece a ningun cliente.");
+			System.out.println("El codigo introducido no pertenece a ningun cliente.");
 		}else {
 			for (int i = 0; i < listaCliente.size(); i++) {
 				if (num==i) {
@@ -43,6 +45,13 @@ public class FuncionCliente {
 	
 	public void eliminarCliente() {
 		
+	}
+	
+	public void listaCLientes() {
+
+		for (int i = 0; i < listaCliente.size(); i++) {
+			listaCliente.get(i).cc();
+		}
 	}
 	
 }
