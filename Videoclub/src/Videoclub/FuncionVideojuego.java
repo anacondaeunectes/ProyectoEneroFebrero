@@ -76,6 +76,8 @@ public class FuncionVideojuego {
 			}
 		}while(b<1 || b>3);
 		
+		teclado.nextLine();
+		
 		listaVideojuego.add(new Videojuego(titulo, precio, plazo, false, estilo, plataforma));
 		
 	}
@@ -86,12 +88,19 @@ public class FuncionVideojuego {
 		
 		System.out.println("Este es el listado de los videojuegos: ");
 		
-		while (ite.hasNext()) {
+		if (listaVideojuego.isEmpty()) {
+			System.out.println("No se han encontrado peliculas");
+		}else{
 			
-			System.out.println(ite.next().toString());
+			while (ite.hasNext()) {
+		
+			Videojuego a = ite.next();
+			System.out.print(listaVideojuego.indexOf(a) + ": ");
+			System.out.println(a.toString());
+			
+			}
 			
 		}
-		
 	}
 	
 //	public Videojuego busquedaVideojuego(int a) {
@@ -104,17 +113,18 @@ public class FuncionVideojuego {
 	public void fichaVideojuego() {
 		
 		listarVideojuegos();
-		System.out.println("Introduzca un videojuego: ");
+		System.out.println("Introduzca el identificador de la pelicula: ");
 		int opcion = teclado.nextInt();
 		System.out.println(listaVideojuego.get(opcion - 1).toString());
 	}
 	
 	public void eliminarVideojuego() {
 		
-		System.out.println("Introduzca el videojuego a eliminar: ");
 		listarVideojuegos();
+		System.out.println("Introduzca el identificador del videojuego a eliminar: ");
 		int opcion = teclado.nextInt();
 		listaVideojuego.remove(opcion);
+		System.out.println("Videojuego eliminado correctamente");
 		
 	}
 	

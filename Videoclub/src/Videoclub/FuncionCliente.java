@@ -20,9 +20,9 @@ public class FuncionCliente {
 		listaCliente = new HashMap<>();
 	}
 	
-	public void addCliente() throws IOException {	//Añade cliente a la lista
+	public void addCliente() throws IOException {	//Aï¿½ade cliente a la lista
 		
-		System.out.println("-AÑADIR CLIENTE- \nNombre Cliente:");
+		System.out.println("-ANADIR CLIENTE- \nNombre Cliente:");
 		String nombre = ex.soloTexto(teclado.readLine());
 		System.out.println("Direccion  Cliente:");
 		String direccion = ex.soloTexto(teclado.readLine());
@@ -77,34 +77,16 @@ public class FuncionCliente {
 	}
 	
 	public void eliminarCliente() throws NumberFormatException, IOException  {	//Elimina cliente de la lista
-//		Iterator<Integer> g = listaCliente.keySet().iterator();
-		System.out.println("Selecciona el codigo que quieras eliminar.");
+		System.out.println("Selecciona el codigo del cliente a eliminar: ");
 		int num=Integer.parseInt(ex.soloNumeros(teclado.readLine()));
-		if (num<=0) {
-			System.out.println("Este usuario no existe");
-			eliminarCliente();
-		}else if (num>listaCliente.size()) {
-			System.out.println("Codigo no encontrado");
-			eliminarCliente();
-		}else {
-//			Map.Entry e;
-//			while (g.hasNext()) {
-////				try {
-////					e = (Map.Entry)g.next();
-//					if (listaCliente.get((Integer)num)==g.next()) {
-////						listaCliente.remove(g.getKey());
-//						g.remove();
-//					}	
-////				} catch (ConcurrentModificationException e) {
-////					System.out.println("Ha ocurrido un problema, lo sentimos.");
-////				}
-//					
-//			}
 			
 			if(listaCliente.containsKey(num)){
 	            listaCliente.remove(num);
+	            System.out.println("Usuario eliminado correctamente");
+	        }else {
+	        	System.out.println("Usuario no encontrado");
 	        }
-		}
+		
 		
 	}
 	
@@ -114,7 +96,7 @@ public class FuncionCliente {
 			Map.Entry e = (Map.Entry)g.next();
 			System.out.println("Cod:" + (int) e.getKey() + e.getValue().toString());	
 		}
-		//System.out.println(listaCliente.toString().replaceAll("  ", "\n"));
+
 	}
 	
 	

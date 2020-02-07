@@ -17,7 +17,7 @@ public class FuncionPelicula {
 	FuncionPelicula(){}
 	
 	public void addPelicula() throws IOException {
-		System.out.println("-ANIADIR PELICULA- \nTitulo de la pelicula");
+		System.out.println("-ANADIR PELICULA- \nTitulo de la pelicula");
 		String titulo =e.nextLine();
 		String tipo="Pelicula";
 		System.out.println("Anio:");
@@ -58,24 +58,32 @@ public class FuncionPelicula {
 	}
 	public void listarPelicula(){
 		Iterator<Pelicula> ite = listaPelicula.iterator();
-		while (ite.hasNext()) {
-			System.out.println(ite.next().toString());
-		}
 		if (listaPelicula.isEmpty()) {
 			System.out.println("No se han encontrado peliculas");
+		}else {
+			
+			while (ite.hasNext()) {
+				Pelicula p = ite.next();
+				System.out.print(listaPelicula.indexOf(p));
+				System.out.println(p.toString());
+			}
+		
 		}
 	}
-	public void ficharPelicula() throws IOException {
+	public void fichaPelicula() throws IOException {
 		listarPelicula();
 		System.out.println("Ponga el numero que identifique a la pelicula");
 		int b=e.nextInt();
 		System.out.println(listaPelicula.get(b).toString());
 	}
+	
 	public void eliminarPelicula() {
 		listarPelicula();
-		System.out.println("Ponga el numero que identifique a la pelicula");
+		System.out.println("Introduzca el identificador de la pelicula a eliminar: ");
 		int c=e.nextInt();
-		System.out.println("Se ha eliminado la pelicula: \n"+listaPelicula.get(c).toString());
 		listaPelicula.remove(c);
+//		System.out.println("Se ha eliminado la pelicula: \n"+listaPelicula.get(c).toString());
+		System.out.println("Pelicula eliminada correctamente");
 	}
+	
 }

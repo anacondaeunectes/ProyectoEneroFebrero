@@ -51,7 +51,7 @@ public class Pelicula extends Producto{
 		this.interpretes = interpretes;
 	}
 	public String toString() {
-		return "Titulo: "+titulo+" Genero: "+gen+" Anio: "+anio+" Director: "+director+" Interpretes: "+interpretes+" Precio: "+precioAlquiler;
+		return "[Titulo: "+titulo+" Genero: "+gen+" Anio: "+anio+" Director: "+director+" Interpretes: "+interpretes+" Precio: "+precioAlquiler+"]";
 	}
 	
 }
