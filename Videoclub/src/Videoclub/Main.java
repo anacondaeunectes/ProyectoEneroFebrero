@@ -190,6 +190,7 @@ public class Main {
 			RegistroAlquiler registroVideojuego = new RegistroAlquiler(ClienteTemporal, VideojuegoTemporal, VideojuegoTemporal.getPrecioAlquiler());
 			
 			FunRegistroAlquiler.addRegistroVideojuego(ClienteTemporal, VideojuegoTemporal);
+			
 			break;
 		default:
 			break;

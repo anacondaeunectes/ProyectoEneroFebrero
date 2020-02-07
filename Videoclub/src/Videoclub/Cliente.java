@@ -86,9 +86,7 @@ public class Cliente {
 	
 	@Override
 	public String toString() {
-		return	"\nNombre: " + getNombre() + 
-				"\nDireccion: " + getDireccion() + 
-				"\nTelefono: " + getTelefono() + ".";
+		return	"[Nombre: " + getNombre() + "Direccion: " + getDireccion() + "Telefono: " + getTelefono() + "]";
 	}
 	
 	public void fichaCliente() {		
