@@ -175,7 +175,6 @@ public class Main {
 			ClienteTemporal.addPelicula(peliculaTemporal);
 			
 			RegistroAlquiler registroPelicula = new RegistroAlquiler(ClienteTemporal, peliculaTemporal, peliculaTemporal.getPrecioAlquiler());
-			
 			FunRegistroAlquiler.addRegistroPelicula(ClienteTemporal, peliculaTemporal);
 			break;
 			
@@ -188,7 +187,6 @@ public class Main {
 			ClienteTemporal.addVideojuego(VideojuegoTemporal);
 			
 			RegistroAlquiler registroVideojuego = new RegistroAlquiler(ClienteTemporal, VideojuegoTemporal, VideojuegoTemporal.getPrecioAlquiler());
-			
 			FunRegistroAlquiler.addRegistroVideojuego(ClienteTemporal, VideojuegoTemporal);
 			
 			break;
