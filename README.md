@@ -10,7 +10,7 @@ De cara al planteamiento y la estructura del sistema, hemos usado este lenguaje 
 
 ### USO METODOLOGÍA AGILE 
 
-El desarrollo del proyecto se ha enfocado a través de la metodología Agile y dentro de un marco de trabajo Scrum. A la hora de plantear el itinerario de trabajo, en primer lugar, se ha modularizado, es decir, se ha fraccionado la estructura de la aplicación de forma que todos los elementos y funcinalidades del sistema planteado se tratan como unidades. Estas unidades son los elementos que conforman un Sprint asd
+El desarrollo del proyecto se ha enfocado a través de la metodología Agile y dentro de un marco de trabajo Scrum. A la hora de plantear el itinerario de trabajo, en primer lugar, se ha modularizado, es decir, se ha fraccionado la estructura de la aplicación de forma que todos los elementos y funcinalidades del sistema planteado se tratan como unidades. En segundo lugar, se han agrupado estas unidades y se han confeccionado los sprints. Esta ha sido la agenda que hemos seguido durante el proyecto (viene reflajada en las tablas "Product Backlog & Sprint Backlog"). Por último, se ha realizado una evaluación del trabajo realizado a través de gráficas ("BurnDown y BurnUp") donde se compara nuestro rendimiento real con el planteado en el inicio del proyecto.
 
 
 ### COLECCIONES USADAS
