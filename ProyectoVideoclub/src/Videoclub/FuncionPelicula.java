@@ -22,11 +22,22 @@ public class FuncionPelicula {
 	 * Metodo que crea y anade una pelicula a la coleccion de peliculas
 	 */
 	public void addPelicula() throws IOException {
-		System.out.println("-ANADIR PELICULA- \nTitulo de la pelicula");
+		System.out.println("-ANIADIR PELICULA- \nTitulo de la pelicula");
 		String titulo =e.nextLine();
-		String tipo="Pelicula";
 		System.out.println("Anio:");
-		String anio= e.nextLine();
+		int cont;
+		String anio="";
+		do {
+			anio=t.readLine();
+			int date= LocalDate.now().getYear();
+			int num=Integer.parseInt(ex.soloNumeros(anio));
+			if(num<1980 || num>(int)date) {
+				cont=1;
+				System.out.println("Anio no valido");
+			}else {
+				cont=0;
+			}
+		} while (cont==1);
 		System.out.println("Director:");
 		String director = e.nextLine();
 		System.out.println("Interpretes:");
@@ -57,8 +68,18 @@ public class FuncionPelicula {
 		}while(k<0 || k>4);
 		System.out.println("Plazo de alquiler (Introduzca los dias):");
 		int plazoAlquiler = e.nextInt();
-		System.out.println("Precio:");
-		Double precioD=e.nextDouble();
+		System.out.println("Precio (Si pone decimales, use un punto en vez de una coma):");
+		String precio="";
+		Double precioD;
+		do {
+			precio=e.nextLine();
+			precioD=Double.parseDouble(ex.validarDouble(precio)); 
+			try {
+				
+			} catch (NumberFormatException e) {
+				// TODO: handle exception
+			}
+		} while (precioD==0);
 		listaPelicula.add(new Pelicula(titulo, precioD, plazoAlquiler, alquilado, genero, anio, director, interpretes));
 	}
 	
